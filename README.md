@@ -1,5 +1,5 @@
 ### academic-stuff
-##### - data_structures - diverse data structures implemented in C.
+##### 1. data_structures - diverse data structures implemented in C.
 -Latex_files
 -CN-2018-2
 -study-projects

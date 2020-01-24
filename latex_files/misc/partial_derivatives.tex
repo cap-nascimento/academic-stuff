@@ -1,0 +1,218 @@
+\documentclass[11pt]{article}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\newcommand{\R}{\mathbb{R}}
+
+\graphicspath{{./img/}}
+
+\begin{document}
+\title{Lista de Exercícios - Derivadas Parciais}
+\author{Anderson Vieira do Nascimento}
+\date{21/10/2018}
+\maketitle
+
+\section{Derivadas parciais em função descontínua}
+
+A seguinte função possui derivadas parciais mesmo sendo descontínua em $p = (0, 0)$.\\
+
+\begin{equation}
+f(x, y) = \frac{sen(x^2 + y^2)}{x^2 + y^2}
+\end{equation}
+
+Graficamente:\\
+
+$$\frac{\partial f(x, y)}{\partial x} = \frac{2x(cos(x^2 + y^2)(x^2 + y^2) - sen(x^2+y^2))}{(x^2 + y^2)^2}$$\\
+\\
+\includegraphics{discontinuous}\\
+\\
+$$\frac{\partial f(x, y)}{\partial y} = \frac{2y(cos(x^2 + y^2)(x^2 + y^2) - sen(x^2+y^2))}{(x^2 + y^2)^2}$$\\
+\\
+\includegraphics{discontinuous1}\\
+\\
+\section{Condição para diferenciabilidade}
+Seja $f: D \in \R^2 \rightarrow \R$, dizemos que $f$ é diferenciável em $p_0 = (x_0, y_0)$ se, para todo $(h, k) \in \R^2$ com $(x_0+h, y_0+h) \in D$, temos:
+
+\begin{equation}
+\lim_{(h, k) \rightarrow (0, 0)} \frac{f(x_0+h, y_0+k) - f(x_0, y_0) - ah - bk}{||(h, k)||} = 0
+\end{equation}
+
+Sendo $a = \frac{\partial}{\partial x} f(x_0, y_0)$ e $b = \frac{\partial}{\partial y} f(x_0, y_0)$\\
+\\
+
+Justificativa:\\
+\\Podemos fazer o limite da seguinte forma:
+$$\lim_{(h, k) \rightarrow (0, 0)} \frac{f(x_0+h, y_0+k) - F(x_0, y_0)}{||(h, k)||} = 0$$
+Onde $ F(x_0, y_0) = f(x_0, y_0) + ah + bk$, que é uma boa aproximação para o valor de $f(x, y)$ próximo ao ponto $p_0 = (x_0, y_0)$, e também é a equação do plano tangente em $p_0$.\\
+\\
+A norma $||(h, k)||$ corresponde à distância de $f(x, y)$ a $f(x_0, y_0)$, ou seja, $h = x - x_0$ e $k = y - y_0$. Assim:\\
+
+$$\lim_{((x-x_0), (y-y_0)) \rightarrow (0, 0)} \frac{f(x, y) - F(x_0, y_0)}{||((x-x_0), (y-y_0))||} = 0$$
+
+O que é verdade se $\frac{\partial}{\partial x} f(x_0, y_0)(x-x_0)$ e $\frac{\partial}{\partial y} f(x_0, y_0) (y-y_0)$ existirem.\\
+\\
+\section{Derivadas parciais em $(0, 1)$}
+
+a)\\
+\\
+$$\frac{\partial}{\partial x} f_1(0, 1) = \lim_{h \rightarrow 0} \frac{f_1(0+h, 1) - f_1(0, 1)}{h}$$
+
+$$ = \lim_{h \rightarrow 0} \frac{((0+h)\times 1 - 1)^2 - (0 \times 1 - 1)^2}{h}$$
+
+$$ = \lim_{h \rightarrow 0} \frac{(h-1)^2 - (-1)^2}{h}$$
+
+$$ = \lim_{h \rightarrow 0} \frac{h^2 - 2h +1 -1}{h}$$
+
+$$ = \lim_{h \rightarrow 0} \frac{h(h - 2)}{h} = \lim_{h \rightarrow 0} h - 2 = -2$$
+
+e
+
+$$\frac{\partial}{\partial y} f_1(0, 1) = \lim_{k \rightarrow 0} \frac{f_1(0, 1+k) - f_1(0, 1)}{k}$$
+
+$$ = \lim_{k \rightarrow 0} \frac{(0\times (1+k) - 1)^2 - (0 \times 1 - 1)^2}{k}$$
+
+$$ = \lim_{k \rightarrow 0} \frac{(-1)^2 - (-1)^2}{k}$$
+
+$$ = \lim_{k \rightarrow 0} \frac{0}{k} = 0$$
+\\
+b)\\
+\\
+$$ \frac{\partial}{\partial r} f_2(0, 1)= \lim_{h \rightarrow 0} \frac{f_2(0+h, 1) - f_2(0, 1)}{h}$$
+
+$$ = \lim_{h \rightarrow 0} \frac{(0+h)cos(1 \times \pi) - 0 \times cos(1 \times \pi)}{h}$$
+
+$$ = \lim_{h \rightarrow 0} \frac{hcos(\pi)}{h} = cos(\pi) = -1$$
+
+e
+
+$$\frac{\partial}{\partial \theta} f_2(0, 1) = \lim_{k \rightarrow 0} \frac{f_2(0, 1+k) - f_2(0, 1)}{k}$$
+
+$$ = \lim_{k \rightarrow 0} \frac{0 \times cos((1+k)\pi) - 0 \times cos(1 \times \pi)}{k}$$
+
+$$ = \lim_{k \rightarrow 0} \frac{0-0}{k} = 0$$
+\\
+c)\\
+\\
+$$\frac{\partial}{\partial x} f_3(0, 1) = 2 \times 0 + 2\times10\pi sen(2 \pi \times 0) = 0$$
+
+e
+
+$$\frac{\partial}{\partial y} f_3(0, 1) = 2 \times 1 + 2\times10\pi sen(2 \pi \times 1) = 2$$
+\\
+d)\\
+\\
+$$\frac{\partial}{\partial x} f_4(0, 1) = -cos(0)sen^2 \left(\frac{0^2}{\pi} \right) + (-sen(0)2(sen \left(\frac{0^2}{\pi} \right)cos \left(\frac{0^2}{\pi} \right)\frac{2 \times 0}{\pi})) = 0$$
+
+e
+
+$$\frac{\partial}{\partial y} f_4(0, 1) = -cos(1)sen^2 \left(\frac{1^2}{\pi} \right) + (-sen(1)2(sen \left(\frac{1^2}{\pi} \right)cos \left(\frac{1^2}{\pi} \right)\frac{2 \times 1}{\pi})) \approx -0,37$$
+
+\section{Derivadas de segunda ordem}
+
+Seja $f(x, y) = cos(xy)$ e $p = (0, \frac{\pi}{2})$, as derivadas parciais no ponto são:
+
+\begin{align*}
+\frac{\partial}{\partial x} \left(\frac{\partial}{\partial x} f(x, y) \right)\\
+& = \frac{\partial}{\partial x} (-sen(xy)y)\\
+& = -y^2cos(xy)\\
+& = -\left(\frac{\pi}{2} \right)^2cos \left(0 \times \frac{\pi}{2} \right)\\
+& = - \frac{\pi^2}{4}
+\end{align*}
+
+\begin{align*}
+\frac{\partial}{\partial x} \left(\frac{\partial}{\partial y} f(x, y) \right)\\
+& = \frac{\partial}{\partial x} (-sen(xy)x)\\
+& = -xycos(xy) - sen(xy)\\
+& = -(0 \times \left( \frac{\pi}{2} \right))cos(0 \times \left( \frac{\pi}{2} \right)) - sen(0 \times \left( \frac{\pi}{2} \right)) = 0 
+\end{align*}
+
+\begin{align*}
+\frac{\partial}{\partial y} \left(\frac{\partial}{\partial x} f(x, y) \right)\\
+& = \frac{\partial}{\partial y} (-sen(xy)y) \\
+& = -xycos(xy) - sen(xy)\\
+& = -(0 \times \left( \frac{\pi}{2} \right))cos(0 \times \left( \frac{\pi}{2} \right)) - sen(0 \times \left( \frac{\pi}{2} \right)) = 0 
+\end{align*}
+
+\begin{align*}
+\frac{\partial}{\partial y} \left(\frac{\partial}{\partial y} f(x, y) \right)\\
+& = \frac{\partial}{\partial y} (-sen(xy)x)\\
+& = -x^2cos(xy)\\
+& = -(0)^2cos(0 \times \left( \frac{\pi}{2} \right)) = 0
+\end{align*}
+
+\section{Diferenciabilidade pela definição}
+a)\\
+Seja $f_1(u, v) = u^2 + v^2$ e $p = (0, 0)$, temos que a função é diferenciável em $p$ se:
+
+\begin{align*}
+\lim_{(h, k) \rightarrow (0, 0)} \frac{f_1(0+h, 0+k) - f_1(0, 0) - \left(\frac{\partial}{\partial u} f_1(0, 0) \right)h - \left(\frac{\partial}{\partial v} f_1(0, 0) \right)k}{\sqrt{h^2 + k^2}} = 0
+\end{align*}
+
+Temos que $\frac{\partial}{\partial u} f_1(0, 0) = 2 \times 0 = 0$, $\frac{\partial}{\partial v} f_1(0, 0) = 2 \times 0 = 0$ e $f_1(0, 0) = 0$, Assim:
+
+$$\lim_{(h, k) \rightarrow (0, 0)} \frac{(0+h)^2 + (0+k)^2 - 0 -(0)h - (0)k}{\sqrt{h^2 + k^2}} =  \lim_{(h, k) \rightarrow (0, 0)} \frac{h^2 + k^2}{\sqrt{h^2 + k^2}}$$
+$$ = \lim_{(h, k) \rightarrow (0, 0)} \sqrt{\frac{(h^2 + k^2)^2}{h^2 + k^2}} = = \lim_{(h, k) \rightarrow (0, 0)} \sqrt{h^2 + k^2} = \sqrt{0 + 0} = 0$$\\
+
+Logo a função é diferenciável no ponto $p$.\\
+
+b)\\
+Seja $f_2(x, y) = 2x + 7$ e $p = (0, 0)$, temos que a função é diferenciável em $p$ se:
+
+\begin{align*}
+\lim_{(h, k) \rightarrow (0, 0)} \frac{f_2(0+h, 0+k) - f_2(0, 0) - \left(\frac{\partial}{\partial x} f_2(0, 0) \right)h - \left(\frac{\partial}{\partial y} f_2(0, 0) \right)k}{\sqrt{h^2 + k^2}} = 0
+\end{align*}
+
+Temos que $\frac{\partial}{\partial x} f_2(0, 0) = 2$, $\frac{\partial}{\partial y} f_2(0, 0)  = 0$ e $f_2(0, 0) = 7$, Assim:
+
+$$\lim_{(h, k) \rightarrow (0, 0)} \frac{(2(0+h) + 7) - 7 - (2)h - (0)k}{\sqrt{h^2 + k^2}}$$
+$$ = \lim_{(h, k) \rightarrow (0, 0)} \frac{2h + 7 - 7 - 2h}{\sqrt{h^2 + k^2}}$$
+$$ = \lim_{(h, k) \rightarrow (0, 0)} \frac{0}{\sqrt{h^2 + k^2}} = 0$$\\
+
+Logo a função é diferenciável no ponto $p$.\\
+
+\section{Diferenciação na origem}
+
+a)\\
+Consideremos $y = kx$. Temos:\\
+\\
+$f(x, y) = f(x, kx) = $
+
+\[ \begin{cases}
+	\frac{x^3k^2}{x^2 + k^4x^4}, (x, kx) \neq (0, 0)\\
+	0, (x, kx) = (0, 0)
+   \end{cases}
+\]
+
+Note que se $x = 0$, $kx = 0$, assim:
+
+$$\lim_{x \rightarrow 0} \frac{x^3k^2}{x^2 + k^4x^4} = \lim_{x \rightarrow 0} \frac{x^3k^2}{x^2(1 + k^4x^2)} = \lim_{x \rightarrow 0} \frac{xk^2}{1 + k^4x^2} = \frac{0}{1 + 0} = 0$$
+
+Ou seja, $f(x, y) \rightarrow 0$ quando $(x, y) \rightarrow (0, 0)$ ao longo da reta $y = kx$, mas se tomarmos a parábola $x = y^2$ como outro caminho, temos:\\
+
+$f(x, y) = f(y^2, y) = $
+
+\[ \begin{cases}
+	\frac{y^2y^2}{(y^2)^2 + y^4}, (y^2, y) \neq (0, 0)\\
+	0, (y^2, y) = (0, 0)
+   \end{cases}
+\]
+
+Note que se $y = 0$, $y^2 = 0$, assim:
+
+$$\lim_{y \rightarrow 0} \frac{y^4}{y^4 + y^4} = \lim_{y \rightarrow 0} \frac{y^4}{2y^4} = \frac{1}{2}$$
+
+Como os limites são diferentes para diferentes caminhos, o limite não existe e a função não é diferenciável na origem.\\
+
+b)\\
+Calculamos as derivadas parciais e verificamos se são contínuas na origem:
+
+$$\frac{\partial}{\partial x} g(0, 0) = e^{0 \times 0} \times 0 = 1 \times 0 = 0$$
+$$\frac{\partial}{\partial y} g(0, 0) = e^{0 \times 0} \times 0 = 1 \times 0 = 0$$
+
+Temos que as derivadas parciais são contínuas na origem, logo a função é diferenciável na origem.
+
+\end{document}

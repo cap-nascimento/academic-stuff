@@ -1,0 +1,275 @@
+\documentclass[11pt]{article}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\title{Lista de Exercícios - Prova 3 - 1/2018}
+\author{Anderson Vieira do Nascimento}
+\date{11/11/2018}
+\maketitle
+
+\section{Derivadas parciais em função descontínua}
+
+Sejam o ponto $p = (0, 0)$ e a seguinte função $f(x, y)$:\\
+
+\[ \begin{cases}
+		\frac{\sqrt{x^2 + y^2} - x - y}{x^2 + y^2}, \ se \ (x, y) \neq (0, 0)\\
+		0, \ se \ (x, y) = (0, 0)
+	\end{cases}
+\]\\
+
+Temos as seguintes derivadas parciais em $p$:\\
+\\
+$f_x(0, 0):$
+$$f_x(0, 0) = \lim_{h \rightarrow 0} \frac{\frac{\sqrt{(x+h)^2 + y^2} - (x + h) - y}{(x+h)^2 + y^2} - \frac{\sqrt{x^2 + y^2} - x - y}{x^2 + y^2}}{h}$$
+
+$$f_x(0, 0) = \lim_{h \rightarrow 0} \frac{\frac{\sqrt{h^2} - h}{h^2} - 0}{h} = \lim_{h \rightarrow 0} \frac{0}{h^3} = 0$$\\
+\\
+$f_y(0, 0):$
+$$f_y(0, 0) = \lim_{k \rightarrow 0} \frac{\frac{\sqrt{x^2 + (y+k)^2} - x - (y+k)}{x^2 + (y+k)^2} - \frac{\sqrt{x^2 + y^2} - x - y}{x^2 + y^2}}{k}$$
+
+$$f_y(0, 0) = \lim_{k \rightarrow 0} \frac{\frac{\sqrt{k^2} - k}{k^2} - 0}{k} = \lim_{k \rightarrow 0} \frac{0}{k^3} = 0$$\\
+\\
+Temos que $f_x(0, 0) = f_y(0, 0) = 0$, logo as derivadas parciais existem mas $f$ não é contínua no ponto $p$.
+
+\section{Diferenciabilidade de função em um ponto}
+
+Pelo teorema:
+
+\textit{Se as derivadas parciais $f_x$ e $f_y$ forem contínuas no ponto $p_0$, a função é diferenciável em $p_0$.}\\
+
+Justificativa: \textit{Com derivadas contínuas é possível aproximar o valor de $f$ em $p_0$ com um plano tangente definido como:}
+
+\begin{equation}
+f(x, y) = f(x_0, y_0) + f_x(x_0, y_0)\Delta x + f_y(x_0, y_0)\Delta y
+\end{equation}
+
+\textit{Sendo possível fazer tal aproximação, a função é diferenciável.}
+
+\section{Máximos locais, mínimos locais e pontos de sela}
+
+Seja a função $f(x, y) = 2x^3 + 2y^3 - 9x^2 + 3y^2 - 12y$ e suas derivadas parciais:
+
+\begin{equation}
+f_x = 6x^2 - 18x
+\end{equation}
+
+\begin{equation}
+f_y = 6y^2 + 6y - 12
+\end{equation}
+
+Temos que em (2), $f_x = 0$ se:
+
+$$6x^2 - 18x = 0$$
+$$x(6x - 18) = 0$$
+
+Portanto, $x = 0$ ou $(6x - 18) = 0$, onde:
+
+$$6x = 18$$
+$$x = 3$$
+
+Logo $x = \{0, 3\}$.\\
+
+Temos que em (3), $f_y = 0$ se:
+
+$$6y^2 + 6y - 12 = 0$$
+
+Resolvendo pela fórmula de bhaskara, temos:
+
+$$\Delta = \sqrt{b^2 - 4ac} = \sqrt{6^2 - 4 \cdot 6 \cdot(-12)} = \sqrt{324} = \pm 18$$
+
+$$y = \frac{-6 \pm 18}{12} = \{-2, 1\}$$
+
+Assim, temos quatro pontos críticos:
+
+$$(0, 1), (0, -2), (3, 1), (3, -2)$$
+
+Tomando a matriz Hessiana:\\
+
+\[
+H = 
+\begin{bmatrix}
+	f_{xx} & f_{xy}\\
+	f_{yx} & f_{yy}
+\end{bmatrix}
+\]
+
+\[
+H = 
+\begin{bmatrix}
+	12x-18 & 0\\
+	0      & 12y+6
+\end{bmatrix}
+\]
+
+Para o ponto $(0, 1)$:
+
+$$Det_M = (12 \cdot 0 - 18)\cdot(12 \cdot 1 + 6) - 0 = (-18)\cdot(18) = -324$$
+
+Como $Det_M < 0$, temos que $(0, 1)$ é ponto de sela.\\
+\\
+
+Para o ponto $(0, -2)$:
+
+$$Det_M = (12 \cdot 0 - 18)\cdot(12 \cdot (-2) + 6) - 0 = (-18)\cdot(-18) = 324$$
+
+Como $Det_M > 0$ e $f_{xx} = -18 < 0$, temos que $(0, -2)$ é ponto de máximo local.\\
+\\
+
+Para o ponto $(3, 1)$:
+
+$$Det_M = (12 \cdot 3 - 18)\cdot(12 \cdot 1 + 6) - 0 = (18)\cdot(18) = 324$$
+
+Como $Det_M > 0$ e $f_{xx} = 18 > 0$, temos que $(3, 1)$ é ponto de mínimo local.\\
+\\
+
+Para o ponto $(3, -2)$:
+
+$$Det_M = (12 \cdot 3 - 18)\cdot(12 \cdot (-2) + 6) - 0 = (18)\cdot(-18) = -324$$
+
+Como $Det_M < 0$, temos que $(3, -2)$ é ponto de sela.\\
+\\
+
+\section{Regra da Cadeia}
+
+Seja $w = f(x, y)$, $x = r \cdot cos(\theta)$ e $y = r \cdot sen(\theta)$:\\
+\\
+Obter $\frac{\partial w}{\partial r}$:\\
+\\
+Pela regra da cadeia, temos que:
+
+$$\frac{\partial w}{\partial r} = \frac{\partial f}{\partial x} \cdot \frac{\mathrm{d} x}{\mathrm{d} r} + \frac{\partial f}{\partial y} \cdot \frac{\mathrm{d} y}{\mathrm{d} r}$$
+
+$$\frac{\partial w}{\partial r} = \frac{\partial f}{\partial x} \cdot cos(\theta) + \frac{\partial f}{\partial y} \cdot sen(\theta)$$
+\\
+Obter $\frac{\partial w}{\partial r}$:\\
+\\
+Pela regra da cadeia, temos que:
+
+$$\frac{\partial w}{\partial \theta} = \frac{\partial f}{\partial x} \cdot \frac{\mathrm{d} x}{\mathrm{d} \theta} + \frac{\partial f}{\partial y} \cdot \frac{\mathrm{d} y}{\mathrm{d} \theta}$$
+
+$$= \frac{\partial f}{\partial x} \cdot (r \cdot (-sen(\theta))) + \frac{\partial f}{\partial y} \cdot (r \cdot cos(\theta))$$
+
+$$= r \cdot \left(\frac{\partial f}{\partial x} \cdot (-sen(\theta)) + \frac{\partial f}{\partial y} \cdot (cos(\theta))\right)$$
+
+Logo:
+
+$$ \frac{1}{r} \cdot \frac{\partial w}{\partial \theta} = \frac{\partial f}{\partial x} \cdot (-sen(\theta)) + \frac{\partial f}{\partial y} \cdot (cos(\theta))$$
+
+\section{Pontos críticos em curvas}
+
+Seja $f(x, y) = x^2 - y^2$ e a parametrização $\alpha(t) = (2cos(t), 2sen(t))$, determinar os pontos críticos sobre a curva:\\
+\\
+Primeiro determinamos o vetor gradiente $\nabla f$:\\
+\\
+$$\nabla f = (f_x, f_y) = (2x, -2y)$$
+\\
+Depois, o vetor tangente à curva $\alpha'(t)$:\\
+\\
+$$\alpha'(t) = \left(\frac{\mathrm{d} x}{\mathrm{d} t}, \frac{\mathrm{d} y}{\mathrm{d} t}\right) = (-2sen(t), 2cos(t))$$
+\\
+Agora, os pontos onde os vetores forem ortogonais são pontos críticos na curva. Em outras palavras:\\
+\\
+$$\langle \nabla f, \alpha'(t) \rangle = 0$$\\
+\\
+Sendo $\nabla f$ expressa em função da curva, temos:\\
+\\
+$$\nabla f (\alpha(t)) = (2 \cdot (2cos(t)), -2 \cdot (2sen(t))) = (4cos(t), -4sen(t))$$\\
+\\
+Assim:\\
+\\
+$$\langle \nabla f, \alpha'(t) \rangle = 4cos(t) \cdot (-2sen(t)) + (-4sen(t)) \cdot (2cos(t))$$
+
+$$\langle \nabla f, \alpha'(t) \rangle = -8cos(t) \cdot sen(t) - 8sen(t) \cdot cos(t) = 0$$
+
+$$-16cos(t) \cdot sen(t) = 0$$
+
+Temos que $-16cos(t) \cdot sen(t) = 0$ se $t = \{ 0, \frac{\pi}{2}, \pi, \frac{3\pi}{2}\}$\\
+\\
+Logo, os pontos onde a variação do consumo é nula são:\\
+$$(2cos(0), 2sen(0)) = (2, 0)$$
+$$(2cos(\frac{\pi}{2}), 2sen(\frac{\pi}{2})) = (0, 2)$$
+$$(2cos(\pi), 2sen(\pi)) = (-2, 0)$$
+$$(2cos(\frac{3\pi}{2}\}), 2sen(\frac{3\pi}{2}\})) = (0, -2)$$\\
+
+Porém, os pontos onde o consumo é $4$ são apenas:\\
+$$(2cos(0), 2sen(0)) = (2, 0)$$
+$$(2cos(\pi), 2sen(\pi)) = (-2, 0)$$
+\\
+As direções dos pontos são dadas por $\alpha'(t)$:\\
+$$\alpha'(t) = (-2sen(t), 2cos(t))$$
+$$(-2sen(0), 2cos(0)) = (0, 2)$$
+$$(-2sen(\pi), 2cos(\pi)) = (0, -2)$$\\
+
+\section{Valores extremos por parametrização e multiplicadores de Lagrange}
+
+Seja $f(x, y) = x + y$ e o círculo unitário $x^2 + y^2 = 1$, determinar os valores extremos da função sobre o círculo.\\
+\\
+\textit{Parametrização em sentido anti-horário}\\
+\\
+$$\alpha(t) = (-sen(t), cos(t))$$
+Tomando $f(\alpha(t))$:
+$$f(\alpha(t)) = (-sen(t)) + cos(t) = cos(t) - sen(t)$$
+Assim:
+$$\frac{\mathrm{d} f}{\mathrm{d} t} = -sen(t) - cos(t) = 0$$
+Temos que $-sen(t) - cos(t) = 0 \Leftrightarrow -sen(t) = cos(t)$, logo $t = \{ \frac{3\pi}{4}, \frac{7\pi}{4} \}$. Os pontos críticos são:
+
+$$\left(-sen \left(\frac{3\pi}{4} \right), cos \left(\frac{3\pi}{4} \right) \right) = \left( - \frac{\sqrt{2}}{2}, - \frac{\sqrt{2}}{2}\right)$$
+
+$$\left(-sen \left(\frac{7\pi}{4} \right), cos \left(\frac{7\pi}{4} \right) \right) = \left( \frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right)$$
+
+Os valores extremos são:
+
+$$f\left( - \frac{\sqrt{2}}{2}, - \frac{\sqrt{2}}{2} \right) = - \sqrt{2}$$
+$$f\left( \frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \right) = \sqrt{2}$$
+
+\textit{Pelo método dos multiplicadores de Lagrange}\\
+\\
+Temos o seguinte sistema:\\
+\[
+	\begin{cases}
+		\nabla f = \lambda \nabla g\\
+		g(x, y) = 0
+	\end{cases}
+\]
+\\
+Temos que $g(x, y) = x^2 + y^2 - 1$, assim:
+$$\nabla f = (f_x, f_y) = (1, 1)$$
+$$\nabla g = (g_x, g_y) = (2x, 2y)$$\\
+Logo:
+\[
+	\begin{cases}
+		(1, 1) = \lambda (2x, 2y) \ \ (I)\\
+		x^2 + y^2 - 1 = 0 \ \ (II)
+	\end{cases}
+\]
+\\
+Da equação I, temos outro sistema:\\
+\[
+	\begin{cases}
+		1 = \lambda 2x \\
+		1 = \lambda 2y
+	\end{cases}
+\]\\
+Que nos dá $x = y = \frac{1}{2\lambda}$. Substituindo os valores na equação II:\\
+$$\left( \frac{1}{2\lambda} \right)^2 + \left( \frac{1}{2\lambda} \right)^2 = 1$$
+$$ \frac{1}{4} \left( \frac{2}{\lambda^2} \right) = 1$$
+$$ \left( \frac{1}{\lambda^2} \right) = 2$$
+$$\lambda^2 = \frac{1}{2}$$
+$$\lambda = \pm \frac{1}{\sqrt{2}}$$
+Assim, se $\lambda = \pm \frac{1}{\sqrt{2}}$:
+
+$$x = \frac{1}{2} \cdot (\pm \sqrt{2}) = \pm \frac{\sqrt{2}}{2}$$
+$$y = \frac{1}{2} \cdot (\pm \sqrt{2}) = \pm \frac{\sqrt{2}}{2}$$
+
+Valores para os quais temos valores extremos nos pontos:
+
+$$f\left( - \frac{\sqrt{2}}{2}, - \frac{\sqrt{2}}{2} \right) = - \sqrt{2}$$
+$$f\left( \frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \right) = \sqrt{2}$$
+
+\end{document}
