@@ -1,7 +1,7 @@
 ### academic-stuff
 1. data_structures - several data structures implemented in C.
 1. latex_files - several codes in tex.
--CN-2018-2
+1. numerical_analysis - several implementations of numerical analysis content;
 -study-projects
 -Algorithms
 -k-nearest-neighbours
