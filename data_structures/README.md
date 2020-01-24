@@ -15,6 +15,8 @@
 1. queue.h - prototypes to previous implementation;
 1. stack.c - source code to implement stack;
 1. stack.h - prototypes to previous implementation;
+1. static_queue.c - source code to implement a static queue;
+1. static_queue.h - prototypes to previous implementation;
 1. treap.c - source code to implement treap (tree + heap);
 1. treap.h - prototypes to previous implementation;
 1. tree.c - source code to implement a simple tree;
