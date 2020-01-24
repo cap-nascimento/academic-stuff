@@ -31,6 +31,12 @@ void bst_remove(bst_t* t, void* data);
 
 int bst_find(bst_t* t, void* data);
 
+void traverse_pre_order(bst_node* root);
+
+void traverse_in_order(bst_node* root);
+
+void traverse_post_order(bst_node* root);
+
 size_t bst_size(bst_t* t);
 
 #endif

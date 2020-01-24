@@ -113,11 +113,35 @@ static int bst_find_helper(bst_t* t, bst_node* root, void* data){
 
 	if(t->comparator(data, root->data) < 0){
 		return bst_find_helper(t, root->left, data);	
-	}else{
+	}else if(t->comparator(data, root->data) > 0){
 		return bst_find_helper(t, root->right, data);
 	}
 
 	return 1;
+}
+
+void traverse_pre_order(bst_node* root){
+	if(root != NULL){
+		printf("%d ", *(int*)root->data);
+		traverse_pre_order(root->left);
+		traverse_pre_order(root->right);
+	}
+}
+
+void traverse_in_order(bst_node* root){
+	if(root != NULL){
+		traverse_in_order(root->left);
+		printf("%d ", *(int*)root->data);
+		traverse_in_order(root->right);
+	}
+}
+
+void traverse_post_order(bst_node* root){
+	if(root != NULL){
+		traverse_post_order(root->left);
+		traverse_post_order(root->right);
+		printf("%d ", *(int*)root->data);
+	}
 }
 
 size_t bst_size(bst_t* t){
