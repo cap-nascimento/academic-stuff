@@ -7,6 +7,8 @@
 1. bst.h - prototypes to previous implementation;
 1. deque.c - source code to implement double ended queue;
 1. deque.h - prototypes to previous implementation;
+1. dlist.c - source code to implement doubly linked list;
+1. dlist.h - prototypes to previous implementation;
 1. list.c - source code to single linked list;
 1. list.h - prototypes to previous implementation;
 1. pqueue.c - source code to priority_queue;
