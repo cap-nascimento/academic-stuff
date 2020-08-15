@@ -1,0 +1,6 @@
+CIC0002 - Fundamentos Teóricos da Computação - 2N34 4N34
+MAT0031 - Introdução a Álgebra Linear - 35N12
+CIC0182 - Lógica Computacional 1 - 2N12 4N12
+CIC0169 - Programação Competitiva - 2T45 4T45
+CIC0197 - Técnicas de Programação 1 - 3N34 5N34
+FGA0053 - Tópicos Especiais em Programação - 6T23 6T45
