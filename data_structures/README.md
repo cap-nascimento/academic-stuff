@@ -9,6 +9,7 @@
 1. deque.h - prototypes to previous implementation;
 1. dlist.c - source code to implement doubly linked list;
 1. dlist.h - prototypes to previous implementation;
+1. genealogic.h - source code to implement Genealogic Tree;
 1. list.c - source code to single linked list;
 1. list.h - prototypes to previous implementation;
 1. pqueue.c - source code to priority_queue;
@@ -26,4 +27,4 @@
 1. ulist.c - source code to unrolled linked list;
 1. ulist.h - prototypes to previous implementation;
 
-###### All files on this folder were written in C;
+###### All files on this folder were written in C/C++;
