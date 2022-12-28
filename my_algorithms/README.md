@@ -4,5 +4,4 @@
 1. ifb_logo.c - source code to print the IFB (Instituto Federal de Brasília) logo;
 1. mariana.c - source code to print the lyrics of the song "Mariana";
 1. unb_artwork.js - source code to print the UnB logo (T-shirt artwork);
-1. pyramid.cpp - an algorithm to sort songs in a specific way
 
